@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game1
+  namespace: game1
+  labels:
+    app: game1
+    environment: demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: game1
+  template:
+    metadata:
+      labels:
+        app: game1
+        environment: demo
+    spec:
+      containers:
+      - name: game1
+        image: dockerghosh/githubsearchfrontend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: http-web
