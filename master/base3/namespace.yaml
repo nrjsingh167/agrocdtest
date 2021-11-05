@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: game3
+  labels:
+    environment: demo
+    app: game3
